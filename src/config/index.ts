@@ -1,97 +1,90 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Muhammad Zarif - Aspiring Game Developer & Programmer",
+  author: "Muhammad Zarif",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Aspiring game designer and developer from Malaysia. Passionate about crafting immersive digital worlds, building intuitive gameplay, and blending creativity with technology.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/zarif.jpg",
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
   ],
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "LinkedIn", href: "https://linkedin.com/in/zarifshamliza" },
+    { text: "Github", href: "https://github.com/madr3p" },
+    { text: "Instagram", href: "https://www.instagram.com/m4drep/" },
   ],
-  socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  socialImage: "/",
+  canonicalURL: "https://madrep.vercel.app",
 };
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Muhammad Zarif",
+    specialty: "Aspiring Game Developer & Programmer",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "Aspiring game designer, programmer and developer from Malaysia. Passionate about crafting immersive digital worlds, building intuitive gameplay, and blending creativity with technology.",
+    email: "zarifshamliza77@gmail.com",
   },
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Universiti Pendidikan Sultan Idris",
+      position: "Diploma Student - Game Design & Development",
+      startDate: "2024",
+      endDate: "Present",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Learning the foundations of C++ programming, digital art, and interactive media to create engaging game mechanics and immersive worlds.",
+        "Developing projects that bridge creativity with technical skill, focusing on gameplay systems, storytelling, and player experience.",
+        "Collaborating with peers to prototype, test, and refine ideas that push the boundaries of digital entertainment.",
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "Self-Learning",
+      position: "Independent Projects in Games & Digital Creativity",
+      startDate: "2020",
+      endDate: "Present",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Explored Roblox Studio to design & program interactive experience mechanics and environments.",
+        "Learned basic Lua programming to script gameplay features and mechanics within Roblox & Growtopia.",
+        "Gained entrepreneurial skills as a Growtopia trader, developing strategy and an understanding of digital economies.",
       ],
-    },
-    {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
     },
   ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
+      name: "Project 1",
+      summary: "Coming Soon.",
       linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
+      linkSource: "/",
+      image: "/coming-soon.jpg",
     },
     {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
+      name: "Project 2",
+      summary: "Coming Soon.",
       linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
+      linkSource: "/",
+      image: "/coming-soon.jpg",
     },
     {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
+      name: "Project 3",
+      summary: "Coming Soon.",
       linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
+      linkSource: "/",
+      image: "/coming-soon.jpg",
     },
   ],
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+      I’m an aspiring Game Developer currently pursuing a Diploma in Game Design and Development at Universiti Pendidikan Sultan Idris (UPSI), with a growing focus on game programming, backend logic, and gameplay systems.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+      Currently learning Lua, Python, and C++, I enjoy applying my skills to build interactive features, implement core mechanics, and develop functional game systems. My interests lie in creating the underlying code that powers engaging player experiences, from gameplay logic to efficient data handling.
+
+      While I understand UI/UX concepts, my main passion is coding and problem-solving, transforming ideas into fully functional, playable realities. I’m committed to continually improving my technical expertise and contributing to projects that combine creative design with solid programming foundations.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/zarif.jpg",
   },
 };
 
