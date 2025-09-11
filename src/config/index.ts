@@ -1,7 +1,7 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Muhammad Zarif - Aspiring Game Developer & Programmer",
+  title: "Muhammad Zarif - Portfolio",
   author: "Muhammad Zarif",
   description:
     "Aspiring game designer and developer from Malaysia. Passionate about crafting immersive digital worlds, building intuitive gameplay, and blending creativity with technology.",
@@ -24,9 +24,9 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Muhammad Zarif",
-    specialty: "Aspiring Game Developer & Programmer",
+    specialty: "Aspiring Game Designer, Programmer & Developer",
     summary:
-      "Aspiring game designer, programmer and developer from Malaysia. Passionate about crafting immersive digital worlds, building intuitive gameplay, and blending creativity with technology.",
+      "I’m an aspiring Game Developer pursuing a Diploma in Game Design and Development at Universiti Pendidikan Sultan Idris, with a focus on programming, backend logic, and gameplay systems. Currently learning C++, Python, and Lua, I enjoy coding mechanics and solving problems to transform ideas into functional, engaging player experiences.",
     email: "zarifshamliza77@gmail.com",
   },
   experience: [
