@@ -49,8 +49,8 @@ export const SITE_CONTENT: SiteContent = {
       summary: [
         "Explored Roblox Studio to design & program interactive experience mechanics and environments.",
         "Learned basic Lua programming to script gameplay features and mechanics within Roblox & Growtopia.",
+        "Developed drawing experience during middle school, becoming familiar with basic drawing techniques and strengthening creativity.",
         "Gained entrepreneurial skills as a Growtopia trader, developing strategy and an understanding of digital economies.",
-        "Developed drawing experience during middle school, becoming familiar with basic drawing techniques and strengthening creativity as a foundation for visual design in game projects.",
       ],
     },
   ],
