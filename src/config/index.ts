@@ -24,9 +24,9 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Muhammad Zarif",
-    specialty: "Aspiring Game Designer, Programmer & Developer",
+    specialty: "Aspiring Game Developer",
     summary:
-      "I’m an aspiring Game Developer pursuing a Diploma in Game Design and Development at Universiti Pendidikan Sultan Idris, with a focus on programming, backend logic, and gameplay systems. Currently learning C++, Python, and Lua, I enjoy coding mechanics and solving problems to transform ideas into functional, engaging player experiences.",
+      "I’m an aspiring Game Developer pursuing a Diploma in Game Design and Development at Universiti Pendidikan Sultan Idris, focusing on programming, backend logic, and gameplay systems. Familiar with C++, Python, and Lua, I enjoy coding mechanics and solving problems to turn ideas into engaging player experiences.",
     email: "zarifshamliza77@gmail.com",
   },
   experience: [
@@ -42,7 +42,7 @@ export const SITE_CONTENT: SiteContent = {
       ],
     },
     {
-      company: "Self-Learning",
+      company: "Self-Taught",
       position: "Independent Projects in Games & Digital Creativity",
       startDate: "2020",
       endDate: "Present",
@@ -50,6 +50,7 @@ export const SITE_CONTENT: SiteContent = {
         "Explored Roblox Studio to design & program interactive experience mechanics and environments.",
         "Learned basic Lua programming to script gameplay features and mechanics within Roblox & Growtopia.",
         "Gained entrepreneurial skills as a Growtopia trader, developing strategy and an understanding of digital economies.",
+        "Developed drawing experience during middle school, becoming familiar with basic drawing techniques and strengthening creativity as a foundation for visual design in game projects.",
       ],
     },
   ],
@@ -78,11 +79,11 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      I’m an aspiring Game Developer currently pursuing a Diploma in Game Design and Development at Universiti Pendidikan Sultan Idris (UPSI), with a growing focus on game programming, backend logic, and gameplay systems.
+      I’m an aspiring Game Developer pursuing a Diploma in Game Design and Development at Universiti Pendidikan Sultan Idris (UPSI), with a focus on programming, backend logic, and gameplay systems.
 
-      Currently learning Lua, Python, and C++, I enjoy applying my skills to build interactive features, implement core mechanics, and develop functional game systems. My interests lie in creating the underlying code that powers engaging player experiences, from gameplay logic to efficient data handling.
+      Currently learning Lua, Python, and C++, I enjoy building interactive features, implementing mechanics, and developing functional systems.
 
-      While I understand UI/UX concepts, my main passion is coding and problem-solving, transforming ideas into fully functional, playable realities. I’m committed to continually improving my technical expertise and contributing to projects that combine creative design with solid programming foundations.
+      Passionate about coding and problem-solving, I aim to transform ideas into engaging, playable experiences while continually improving my technical expertise.
     `,
     image: "/zarif.jpg",
   },
