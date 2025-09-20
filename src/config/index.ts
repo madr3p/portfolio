@@ -16,6 +16,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "LinkedIn", href: "https://linkedin.com/in/zarifshamliza" },
     { text: "Github", href: "https://github.com/madr3p" },
     { text: "Instagram", href: "https://www.instagram.com/m4drep/" },
+    { text: "Reddit", href: "https://www.reddit.com/user/madr3p" },
   ],
   socialImage: "/",
   canonicalURL: "https://madrep.vercel.app",
