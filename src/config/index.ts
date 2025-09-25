@@ -86,7 +86,7 @@ export const SITE_CONTENT: SiteContent = {
 
       Passionate about coding and problem-solving, I aim to transform ideas into engaging, playable experiences while continually improving my technical expertise.
     `,
-    image: "/zarif.jpg",
+    image: "/zarif2.jpg",
   },
 };
 
