@@ -4,12 +4,12 @@ export const SITE_CONFIG: SiteConfig = {
   title: "Muhammad Zarif - Portfolio",
   author: "Muhammad Zarif",
   description:
-    "Aspiring game designer and developer from Malaysia. Passionate about crafting immersive digital worlds, building intuitive gameplay, and blending creativity with technology.",
+    "Game Design student at UPSI with a focus on stylized level design, game systems, and player-driven economies.",
   lang: "en",
   siteLogo: "/zarif.jpg",
   navLinks: [
     { text: "Experience", href: "#experience" },
-    { text: "Projects", href: "#projects" },
+    { text: "Skills", href: "#projects" },
     { text: "About", href: "#about" },
   ],
   socialLinks: [
@@ -25,69 +25,84 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Muhammad Zarif",
-    specialty: "Aspiring Game Developer",
+    specialty: "Aspiring Game Designer & Developer",
     summary:
-      "I’m an aspiring Game Developer pursuing a Diploma in Game Design and Development at Universiti Pendidikan Sultan Idris, focusing on programming, backend logic, and gameplay systems. Familiar with C++, Python, and Lua, I enjoy coding mechanics and solving problems to turn ideas into engaging player experiences.",
+      "Game Design student at UPSI with an interest in stylized level design and in-game economy systems. Experienced with player-driven markets through years of hands-on engagement in online games, and passionate about efficient creative workflows.",
     email: "zarifshamliza77@gmail.com",
   },
+
   experience: [
     {
       company: "Universiti Pendidikan Sultan Idris",
-      position: "Diploma Student - Game Design & Development",
+      position: "Diploma in Game Design & Development",
       startDate: "2024",
       endDate: "Present",
       summary: [
-        "Learning the foundations of C++ programming, digital art, and interactive media to create engaging game mechanics and immersive worlds.",
-        "Developing projects that bridge creativity with technical skill, focusing on gameplay systems, storytelling, and player experience.",
-        "Collaborating with peers to prototype, test, and refine ideas that push the boundaries of digital entertainment.",
+        "Focusing on level design and technical implementation in Unity, emphasizing stylized visuals and clear player navigation.",
+        "Learning foundational programming concepts in C++ and Python to support gameplay logic and simple camera systems.",
+        "Using Blender to model and prototype basic 3D assets for environments and level layouts.",
+        "Designing UI and visual assets with Adobe Photoshop and Illustrator for course-based projects.",
       ],
     },
     {
-      company: "Self-Taught",
-      position: "Independent Projects in Games & Digital Creativity",
+      company: "Player-Driven Game Economies",
+      position: "Market & Systems Experience (Growtopia & Graal Era)",
       startDate: "2020",
       endDate: "Present",
       summary: [
-        "Explored Roblox Studio to design & program interactive experience mechanics and environments.",
-        "Learned basic Lua programming to script gameplay features and mechanics within Roblox & Growtopia.",
-        "Developed drawing experience during middle school, becoming familiar with basic drawing techniques and strengthening creativity.",
-        "Gained entrepreneurial skills as a Growtopia trader, developing strategy and an understanding of digital economies.",
+        "Accumulated over five years of experience engaging with player-driven economies in online games.",
+        "Reached a peak net worth of 600+ BGLs in Growtopia (2022) through item trading, market timing, and supply management.",
+        "Developed practical insight into player behavior, inflation, scarcity, and reward-based progression systems.",
+      ],
+    },
+    {
+      company: "Technical & Creative Workflow",
+      position: "Digital Tools & Asset Production",
+      startDate: "2017",
+      endDate: "Present",
+      summary: [
+        "Comfortable using creative tools such as Adobe Fresco and Aseprite for rapid sketching and asset experimentation.",
+        "Built an efficient desktop workflow through years of daily use of creative and technical software.",
+        "Able to quickly adapt to new tools and pipelines with a focus on speed, organization, and iteration.",
       ],
     },
   ],
+
   projects: [
     {
-      name: "Project 1",
-      summary: "Coming Soon.",
+      name: "Level Design & Unity Workflow",
+      summary:
+        "Designing stylized environments in Unity, focusing on lighting, post-processing, and scene layout to create readable and visually cohesive levels.",
       linkPreview: "/",
       linkSource: "/",
-      image: "/coming-soon.jpg",
+      image: "/level-design.jpg",
     },
     {
-      name: "Project 2",
-      summary: "Coming Soon.",
+      name: "3D & 2D Art Tools",
+      summary:
+        "Using Blender for basic 3D asset creation and Aseprite for pixel art and animation, with supporting work in Photoshop, Illustrator, and Fresco.",
       linkPreview: "/",
       linkSource: "/",
-      image: "/coming-soon.jpg",
+      image: "/art-suite.jpg",
     },
     {
-      name: "Project 3",
-      summary: "Coming Soon.",
+      name: "Game Systems & Economy Design",
+      summary:
+        "Applying long-term experience from player-driven game markets to design balanced in-game economies and reward structures.",
       linkPreview: "/",
       linkSource: "/",
-      image: "/coming-soon.jpg",
+      image: "/economy.jpg",
     },
   ],
+
   about: {
     description: `
-      I’m an aspiring Game Developer pursuing a Diploma in Game Design and Development at Universiti Pendidikan Sultan Idris (UPSI), with a focus on programming, backend logic, and gameplay systems.
+I am a Game Design student who enjoys thinking about games as interconnected systems. My long-term involvement in player-driven economies such as Growtopia and Graal Era has shaped how I approach balance, progression, and player motivation.
 
-      Currently learning Lua, Python, and C++, I enjoy building interactive features, implementing mechanics, and developing functional systems.
+Currently studying at UPSI, I am developing my technical skills in Unity and Blender while focusing on stylized and cartoon-inspired visuals. I enjoy creating levels that feel intuitive, expressive, and visually clear for players.
 
-      Passionate about coding and problem-solving, I aim to transform ideas into engaging, playable experiences while continually improving my technical expertise.
+I am particularly interested in the space where art meets systems—using simple scripting, camera work, and layout design to support strong gameplay experiences. I value fast iteration, practical learning, and continuous improvement.
     `,
     image: "/zarif2.jpg",
   },
 };
-
-// #5755ff
