@@ -33,7 +33,7 @@ export const SITE_CONTENT: SiteContent = {
 
   experience: [
     {
-      company: "Universiti Pendidikan Sultan Idris",
+      company: "Sultan Idris Education University (UPSI)",
       position: "Diploma in Game Design & Development",
       startDate: "2024",
       endDate: "Present",
@@ -68,30 +68,28 @@ export const SITE_CONTENT: SiteContent = {
     },
   ],
 
-  projects: [
+projects: [
     {
-      name: "Level Design & Unity Workflow",
-      summary:
-        "Designing stylized environments in Unity, focusing on lighting, post-processing, and scene layout to create readable and visually cohesive levels.",
-      linkPreview: "/",
-      linkSource: "/",
-      image: "/level-design.jpg",
+      name: "Level Designing (Unity)",
+      summary: "Creating immersive, vibrant environments with a focus on camera composition and player flow. Proficient in Unity's lighting and scene setup.",
+      // Leave these out or set them to null
+      linkPreview: null,
+      linkSource: null,
+      image: "/level-design.jpg", 
     },
     {
-      name: "3D & 2D Art Tools",
-      summary:
-        "Using Blender for basic 3D asset creation and Aseprite for pixel art and animation, with supporting work in Photoshop, Illustrator, and Fresco.",
-      linkPreview: "/",
-      linkSource: "/",
-      image: "/art-suite.jpg",
-    },
-    {
-      name: "Game Systems & Economy Design",
-      summary:
-        "Applying long-term experience from player-driven game markets to design balanced in-game economies and reward structures.",
-      linkPreview: "/",
-      linkSource: "/",
+      name: "System & Economy Design",
+      summary: "Applying years of high-level Growtopia/Graal market experience to design balanced game economies and reward systems.",
+      linkPreview: null,
+      linkSource: null,
       image: "/economy.jpg",
+    },
+    {
+      name: "3D & 2D Asset Pipeline",
+      summary: "Knowledge of Blender 3D modeling fundamentals combined with amateur-level use of Adobe Photoshop, Illustrator, and Aseprite for stylized art.",
+      linkPreview: null,
+      linkSource: null,
+      image: "/art-suite.jpg",
     },
   ],
 
