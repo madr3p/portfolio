@@ -5,33 +5,54 @@ type Props = HeroProps;
 const { name, specialties, summary, email } = Astro.props;
 ---
 
-<section class="py-24 md:py-32" id="hero">
-  <h1 class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl">
+<section class="py-16 md:py-24 flex flex-col items-center justify-center min-h-[70vh]" id="hero">
+  <h1 class="name-animation mb-4 font-serif text-5xl font-bold tracking-tightest text-white sm:text-9xl md:text-8xl lg:text-9xl text-center">
     {name}
   </h1>
   
-  <p class="mb-9 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl min-h-[1.2em]">
-    <span>Aspiring Game</span> 
-    <span id="typewriter" data-words={JSON.stringify(specialties)}>{specialties[0]}</span>
+  <p class="mb-8 font-serif text-xl leading-tight font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl text-center min-h-[3em] sm:min-h-[1.2em]">
+    <span class="opacity-80">Aspiring Game</span> 
+    <span id="typewriter" class="text-white sm:text-primary" data-words={JSON.stringify(specialties)}>{specialties[0]}</span>
     <span class="cursor">|</span>
   </p>
 
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg max-w-2xl">
+  <p class="mb-12 text-base font-normal text-neutral/90 md:text-lg max-w-2xl text-center leading-relaxed mx-auto">
     {summary}
   </p>
 
-  <a href={`mailto:${email}`} class="inline-block rounded-full bg-primary px-8 py-5 text-sm font-medium text-[#fff] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.4)] active:scale-95">
+  <a href={`mailto:${email}`} class="inline-block rounded-full bg-primary px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] active:scale-95">
     Get in Touch
   </a>
 </section>
 
 <style>
+  .name-animation {
+    opacity: 0;
+    animation: dropIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes dropIn {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
   .cursor {
     display: inline-block;
-    width: 3px;
-    background-color: currentColor;
+    width: 2px;
+    height: 1em;
+    background-color: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
     margin-left: 4px;
-    animation: blink 1s infinite;
+    animation: blink 1s step-end infinite;
     vertical-align: middle;
   }
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
@@ -46,14 +67,12 @@ const { name, specialties, summary, email } = Astro.props;
     if (words.length === 0) return;
 
     let wordIndex = 0;
+    typewriter.textContent = words[0];
     let charIndex = words[0].length;
     let isDeleting = true;
-    // Use window.setTimeout to force the return type to be a number (fixing your TS error)
-    let timeoutId: number;
 
     function type() {
       const currentWord = words[wordIndex];
-      
       if (isDeleting) {
         typewriter!.textContent = currentWord.substring(0, charIndex - 1);
         charIndex--;
@@ -62,22 +81,21 @@ const { name, specialties, summary, email } = Astro.props;
         charIndex++;
       }
 
-      let typeSpeed = isDeleting ? 50 : 100;
+      let typeSpeed = isDeleting ? 40 : 80;
 
       if (!isDeleting && charIndex === currentWord.length) {
         isDeleting = true;
-        typeSpeed = 2500; // Pause while word is complete
+        typeSpeed = 2500; 
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 500; // Pause before typing next suffix
+        typeSpeed = 400; 
       }
 
-      timeoutId = window.setTimeout(type, typeSpeed);
+      window.setTimeout(type, typeSpeed);
     }
 
-    // Initial delay before first deletion
-    timeoutId = window.setTimeout(type, 2000);
+    window.setTimeout(type, 2000);
   }
 
   initTypewriter();

@@ -9,91 +9,51 @@
   --color-white: #e2e8f0;
   --color-black: #0e141b;
 
-  --text-xs: 0.875rem;
-  --text-xs--line-height: 1.125rem;
-  --text-sm: 1rem;
-  --text-sm--line-height: 1.25rem;
-  --text-base: 1.125rem;
-  --text-base--line-height: 1.625rem;
-  --text-lg: 1.25rem;
-  --text-lg--line-height: 1.75rem;
-  --text-xl: 1.5rem;
-  --text-xl--line-height: 1.813rem;
-  --text-2xl: 1.75rem;
-  --text-2xl--line-height: 2.125rem;
-  --text-3xl: 2rem;
-  --text-3xl--line-height: 2.375rem;
-  --text-4xl: 2.25rem;
-  --text-4xl--line-height: 2.688rem;
-  --text-5xl: 2.5rem;
-  --text-5xl--line-height: 3rem;
-  --text-6xl: 3rem;
-  --text-6xl--line-height: 3.625rem;
-  --text-7xl: 3.75rem;
-  --text-7xl--line-height: 1;
-  --text-8xl: 4.5rem;
-  --text-8xl--line-height: 4.875rem;
-  --text-9xl: 6rem;
-  --text-9xl--line-height: 6.625rem;
+  /* Downsized for Professional Hierarchy */
+  --text-5xl: 2.25rem;
+  --text-6xl: 2.75rem;
+  --text-7xl: 3.25rem;
+  --text-8xl: 4rem;
+  --text-9xl: 4.75rem; /* Cap your name size */
+  
+  --text-9xl--line-height: 1;
 
-  --tracking-tightest: -2px;
-  --tracking-tighter: -1px;
-  --tracking-tight: -0.25px;
+  --tracking-tightest: -0.04em;
+  --tracking-tighter: -0.02em;
+}
 
-  --animate-slide-in: slide-in 600ms ease both;
+/* Base Paragraph Rule */
+p {
+  max-width: 70ch;
+  margin-inline: auto;
+}
 
-  @keyframes slide-in {
-    10% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+/* MARQUEE */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
 }
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-100%); }
 }
 
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 25s linear infinite;
-}
-
-.marquee-container {
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-}
-/* The initial state: invisible and slightly shifted down */
+/* REVEAL ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: blur(8px);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* The active state: visible and in position */
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
 }
-/* Container for staggered children */
-.stagger-container .reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* When the container is active, animate children one by one */
-.stagger-container.active .reveal {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Logic for delays (add as many as you need) */
-.stagger-container.active .reveal:nth-child(1) { transition-delay: 100ms; }
-.stagger-container.active .reveal:nth-child(2) { transition-delay: 200ms; }
-.stagger-container.active .reveal:nth-child(3) { transition-delay: 300ms; }
-.stagger-container.active .reveal:nth-child(4) { transition-delay: 400ms; }

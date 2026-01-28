@@ -5,13 +5,30 @@ import Layout from "@layouts/Layout.astro";
 import Experience from "@components/Experience.astro";
 import Projects from "@components/Projects.astro";
 import About from "@components/About.astro";
-
 import "../styles/global.css";
 ---
 
 <Layout>
-  <Hero {...SITE_CONTENT.hero} />
-  <Experience experience={SITE_CONTENT.experience} />
-  <Projects projects={SITE_CONTENT.projects} />
-  <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
+  <div class="reveal"><Hero {...SITE_CONTENT.hero} /></div>
+  <div class="reveal"><Experience experience={SITE_CONTENT.experience} /></div>
+  <div class="reveal"><Projects projects={SITE_CONTENT.projects} /></div>
+  <div class="reveal"><About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} /></div>
 </Layout>
+
+<script>
+  function initReveal() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  }
+
+  initReveal();
+  document.addEventListener("astro:after-swap", initReveal);
+</script>
