@@ -2,26 +2,84 @@
 import type { HeroProps } from "@types";
 type Props = HeroProps;
 
-const { name, specialty, summary, email } = Astro.props;
+const { name, specialties, summary, email } = Astro.props;
 ---
 
 <section class="py-24 md:py-32" id="hero">
-  <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
-  >
+  <h1 class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl">
     {name}
   </h1>
-  <p
-    class="mb-9 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
-  >
-    {specialty}
+  
+  <p class="mb-9 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl min-h-[1.2em]">
+    <span>Aspiring Game</span> 
+    <span id="typewriter" data-words={JSON.stringify(specialties)}>{specialties[0]}</span>
+    <span class="cursor">|</span>
   </p>
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg">
+
+  <p class="mb-16 text-base font-normal text-neutral md:text-lg max-w-2xl">
     {summary}
   </p>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href={`mailto:${email}`}>Get in Touch</a
-  >
+  <a href={`mailto:${email}`} class="inline-block rounded-full bg-primary px-8 py-5 text-sm font-medium text-[#fff] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.4)] active:scale-95">
+    Get in Touch
+  </a>
 </section>
+
+<style>
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: currentColor;
+    margin-left: 4px;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+</style>
+
+<script>
+  function initTypewriter() {
+    const typewriter = document.getElementById('typewriter');
+    if (!typewriter) return;
+
+    const words = JSON.parse(typewriter.dataset.words || '[]');
+    if (words.length === 0) return;
+
+    let wordIndex = 0;
+    let charIndex = words[0].length;
+    let isDeleting = true;
+    // Use window.setTimeout to force the return type to be a number (fixing your TS error)
+    let timeoutId: number;
+
+    function type() {
+      const currentWord = words[wordIndex];
+      
+      if (isDeleting) {
+        typewriter!.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typewriter!.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let typeSpeed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        typeSpeed = 2500; // Pause while word is complete
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typeSpeed = 500; // Pause before typing next suffix
+      }
+
+      timeoutId = window.setTimeout(type, typeSpeed);
+    }
+
+    // Initial delay before first deletion
+    timeoutId = window.setTimeout(type, 2000);
+  }
+
+  initTypewriter();
+  document.addEventListener('astro:after-swap', initTypewriter);
+</script>

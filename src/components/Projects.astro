@@ -17,42 +17,40 @@ const { projects } = Astro.props;
       return (
         <div
           style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
+          class="spotlight-card sticky mb-12 rounded-2xl border border-white/10 bg-black overflow-hidden"
         >
-          <div class="bg-difu relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="px-6 pt-12">
+          {/* Spotlight Layer */}
+          <div class="spotlight-layer pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 z-10" 
+               style="background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.08), transparent 40%);">
+          </div>
+
+          <div class="bg-difu relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/90 backdrop-blur-sm before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
+            
+            <div class="px-6 pt-12 z-20">
               <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
                 {name}
               </h3>
-              <p class="text-base text-neutral">{summary}</p>
+              <p class="text-base text-neutral leading-relaxed">{summary}</p>
               
-              {/* Only show this div if at least one link exists */}
               {(linkSource || linkPreview) && (
                 <div class="flex gap-5 pt-10 text-white">
                   {linkSource && (
-                    <a
-                      href={linkSource}
-                      target="_blank"
-                      class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                    >
+                    <a href={linkSource} target="_blank" class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:text-primary transition-colors hover:underline">
                       Source
                     </a>
                   )}
                   {linkPreview && (
-                    <a
-                      href={linkPreview}
-                      target="_blank"
-                      class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                    >
+                    <a href={linkPreview} target="_blank" class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:text-primary transition-colors hover:underline">
                       Preview
                     </a>
                   )}
                 </div>
               )}
             </div>
-            <div class="flex items-end justify-end overflow-hidden">
+
+            <div class="relative flex items-end justify-end overflow-hidden">
               <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-left-top sm:h-[85%] sm:w-full"
+                class="parallax-img h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-cover sm:h-[85%] sm:w-full transition-transform duration-500 ease-out will-change-transform"
                 src={image}
                 alt={name}
                 width="736"
@@ -65,3 +63,45 @@ const { projects } = Astro.props;
     })
   }
 </Section>
+
+<script>
+  // Spotlight Effect Logic
+  document.querySelectorAll('.spotlight-card').forEach(cardElement => {
+    // Cast the card and layer so TypeScript knows they have a .style property
+    const card = cardElement as HTMLElement;
+    const layer = card.querySelector('.spotlight-layer') as HTMLElement;
+
+    if (layer) {
+      card.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        layer.style.opacity = '1';
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        layer.style.opacity = '0';
+      });
+    }
+  });
+
+  // Parallax Logic
+  window.addEventListener('scroll', () => {
+    const images = document.querySelectorAll('.parallax-img');
+    images.forEach(imgElement => {
+      const img = imgElement as HTMLElement;
+      const rect = img.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      
+      if (isVisible) {
+        const speed = 0.04;
+        const offset = (window.innerHeight / 2 - rect.top) * speed;
+        // Using transform instead of top/left for better performance (Lighthouse friendly)
+        img.style.transform = `translateY(${offset}px) scale(1.05)`;
+      }
+    });
+  });
+</script>

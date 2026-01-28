@@ -67,3 +67,33 @@
   white-space: nowrap;
   display: flex;
 }
+/* The initial state: invisible and slightly shifted down */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The active state: visible and in position */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Container for staggered children */
+.stagger-container .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* When the container is active, animate children one by one */
+.stagger-container.active .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Logic for delays (add as many as you need) */
+.stagger-container.active .reveal:nth-child(1) { transition-delay: 100ms; }
+.stagger-container.active .reveal:nth-child(2) { transition-delay: 200ms; }
+.stagger-container.active .reveal:nth-child(3) { transition-delay: 300ms; }
+.stagger-container.active .reveal:nth-child(4) { transition-delay: 400ms; }

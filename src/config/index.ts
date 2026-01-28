@@ -3,8 +3,7 @@ import type { SiteConfig, SiteContent } from "../types";
 export const SITE_CONFIG: SiteConfig = {
   title: "Muhammad Zarif - Portfolio",
   author: "Muhammad Zarif",
-  description:
-    "Game Design student at UPSI with a focus on stylized level design, game systems, and player-driven economies.",
+  description: "Game Design student at UPSI with a focus on stylized level design, game systems, and player-driven economies.",
   lang: "en",
   siteLogo: "/zarif.jpg",
   navLinks: [
@@ -25,9 +24,15 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Muhammad Zarif",
-    specialty: "Aspiring Game Designer & Developer",
-    summary:
-      "Game Design student at UPSI with an interest in stylized level design and in-game economy systems. Experienced with player-driven markets through years of hands-on engagement in online games, and passionate about efficient creative workflows.",
+    // We changed this to an array for the typewriter effect
+    specialties: [
+      "Developer", 
+      "Artist", 
+      "Programmer",
+      "UI/UX Designer",
+      "Level Designer",
+    ],
+    summary: "Game Design student at UPSI with an interest in stylized level design and in-game economy systems. Experienced with player-driven markets through years of hands-on engagement in online games, and passionate about efficient creative workflows.",
     email: "zarifshamliza77@gmail.com",
   },
 
@@ -68,11 +73,10 @@ export const SITE_CONTENT: SiteContent = {
     },
   ],
 
-projects: [
+  projects: [
     {
       name: "Level Designing (Unity)",
       summary: "Creating immersive, vibrant environments with a focus on camera composition and player flow. Proficient in Unity's lighting and scene setup.",
-      // Leave these out or set them to null
       linkPreview: undefined,
       linkSource: undefined,
       image: "/level-design.jpg", 
@@ -94,13 +98,7 @@ projects: [
   ],
 
   about: {
-    description: `
-I am a Game Design student who enjoys thinking about games as interconnected systems. My long-term involvement in player-driven economies such as Growtopia and Graal Era has shaped how I approach balance, progression, and player motivation.
-
-Currently studying at UPSI, I am developing my technical skills in Unity and Blender while focusing on stylized and cartoon-inspired visuals. I enjoy creating levels that feel intuitive, expressive, and visually clear for players.
-
-I am particularly interested in the space where art meets systems—using simple scripting, camera work, and layout design to support strong gameplay experiences. I value fast iteration, practical learning, and continuous improvement.
-    `,
+    description: `I am a Game Design student who enjoys thinking about games as interconnected systems. My long-term involvement in player-driven economies such as Growtopia and Graal Era has shaped how I approach balance, progression, and player motivation.\n\nCurrently studying at UPSI, I am developing my technical skills in Unity and Blender while focusing on stylized and cartoon-inspired visuals. I enjoy creating levels that feel intuitive, expressive, and visually clear for players.\n\nI am particularly interested in the space where art meets systems—using simple scripting, camera work, and layout design to support strong gameplay experiences. I value fast iteration, practical learning, and continuous improvement.`,
     image: "/zarif2.jpg",
   },
 };
